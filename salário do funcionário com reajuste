@@ -1,0 +1,6 @@
+#Lê o salário de um funcionário e mostre o seu novo salário com 15% de aumento.
+
+n=str(input('Digite o nome do funcionário: '))
+s=float(input(('Digite o salário atual de {}:').format(n)))
+a=float(input('Digite o percentual de reajuste: '))
+print(('O novo salário de {}, com {}% de aumento, passará a ser {:.2f}.').format(n,a, s+(s*a/100)))
