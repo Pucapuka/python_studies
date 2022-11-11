@@ -2,7 +2,6 @@
 
 #Importing the random module:
 import random
-random.seed(100)
 
 #organizing the functions that will execute the operations:
 def addition(Rsm, mainNumber):
@@ -38,18 +37,16 @@ mainNumber = int(input("\033[33mName the number you want to be tested on (betwee
 while mainNumber not in range (0,101):
   mainNumber = int(input("\033[33mChoose a number between 0 and 100!"))
 
-#Variables to store the random numbers
-Rsm = random.randint(0,100)
-Rs = random.randint(mainNumber,100)
-Rd = random.randint(mainNumber,100)
-
 #Chances and points:
 counter = 0;
 point = 0;
 
    
 if operation == 1:
-  while counter in range(0,10):     
+  while counter in range(0,10):
+    #Variable to store the random numbers
+    Rsm = random.randint(0,100)
+
     sum = addition(Rsm, mainNumber)
     answer = int(input("\033[33mWhat's the right answer? \033[32m"))
     if answer == sum:
@@ -62,6 +59,9 @@ if operation == 1:
         
 elif operation == 2:
   while counter in range(0,10):
+    #variable to store the random numbers
+    Rs = random.randint(mainNumber,100)
+
     sub = subtraction(Rs, mainNumber)
     answer = int(input("\033[33mWhat's the right answer? \033[32m"))
     if answer == sub:
@@ -74,6 +74,8 @@ elif operation == 2:
         
 elif operation == 3:
   while counter in range(0,10):
+    #Variable to store the random numbers
+    Rsm = random.randint(0,100)
     mult = multiplication(Rsm, mainNumber)
     answer = int(input("\033[33mWhat's the right answer? \033[32m"))
     if answer == mult:
@@ -86,6 +88,9 @@ elif operation == 3:
 
 elif operation == 4:
   while counter in range(0,10):
+    #variable to store the random numbers
+    Rd = random.randint(mainNumber,100)
+
     div = division(Rd, mainNumber)
     answer = int(input("\033[33mWhat's the right answer? \033[32m"))
     if answer == div:
