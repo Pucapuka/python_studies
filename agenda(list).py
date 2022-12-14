@@ -34,7 +34,7 @@ while option != 4:
     printList()
     print()
   elif option != 4:
-    print ("chose a right option")
+    print ("Choose a right option!")
     time.sleep(3)
     os.system("clear")
 
