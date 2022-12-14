@@ -1,9 +1,11 @@
 import sys, os, time
 item = ""
+
 def printList():
   print("\n\nTo do list:\n")
   for item in toDoList:
     print(item)
+    print()
 
 def addToList():
   item = input("What activity to add?\n")
@@ -18,24 +20,23 @@ def removeFromList():
     
 #------------MAIN FUNCTION------------------------------
 toDoList = []
-repeat = ""
-option = int(input("What do you want to do?\n1. add a task;\n2.Remove a task;\n3.Exit.\n"))
-while option != 3:
+option = ""
+while option != 4:
+  option = int(input("What do you want to do?\n1. Add a task;\n2.Remove a task;\n3.Show Agenda\n4.Exit.\n"))
+
   if option == 1:
-    while repeat != "no":
-      addToList()
-      repeat = input("Press any key to continue or type 'no' to  stop listing.")
+    addToList()
+    print()
   elif option == 2:
-    while repeat != "no":
-      removeFromList()
-      repeat = input("Press any key to continue or type 'no' to  stop listing.")
-  else:
+    removeFromList()
+    print()
+  elif option == 3:
+    printList()
+    print()
+  elif option != 4:
     print ("chose a right option")
     time.sleep(3)
     os.system("clear")
-    option = int(input("What do you want to do?\n1. add a task;\n2.Remove a task;\n3.Exit.\n"))
-
-printList()
 
 closing = "Closing agenda..."
 for char in closing:
