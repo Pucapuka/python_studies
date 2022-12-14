@@ -2,27 +2,27 @@ import sys, os, time
 item = ""
 
 def printList():
-  print("\n\nTo do list:\n")
+  print("\n\n\033[35mTo do list:\n")
   for item in toDoList:
     print(item)
     print()
 
 def addToList():
-  item = input("What activity to add?\n")
+  item = input("\033[34mWhat activity to add?\n")
   toDoList.append(item)
 
 def removeFromList():
-  item = input("What activity to remove?\n")
+  item = input("\033[31mWhat activity to remove?\n")
   if item in toDoList:
     toDoList.remove(item)
   else:
-    print(f'The activity "{item}" isn\'t in the list.')
+    print(f'\033[32mThe activity "{item}" isn\'t in the list.')
     
 #------------MAIN FUNCTION------------------------------
 toDoList = []
 option = ""
 while option != 4:
-  option = int(input("What do you want to do?\n1. Add a task;\n2.Remove a task;\n3.Show Agenda\n4.Exit.\n"))
+  option = int(input("\033[33mWhat do you want to do?\n\033[34m1. Add a task;\n\033[31m2. Remove a task;\n\033[35m3.Show Agenda\n\033[36m4.Exit.\n"))
 
   if option == 1:
     addToList()
@@ -34,11 +34,11 @@ while option != 4:
     printList()
     print()
   elif option != 4:
-    print ("Choose a right option!")
+    print ("\033[31mChoose a right option!")
     time.sleep(3)
     os.system("clear")
 
-closing = "Closing agenda..."
+closing = "\033[36mClosing agenda..."
 for char in closing:
   sys.stdout.write(char)
   sys.stdout.flush()
