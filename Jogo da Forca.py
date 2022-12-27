@@ -1,3 +1,10 @@
+'''
+
+                            Online Python Compiler.
+                Code, Compile, Run and Debug python program online.
+Write your code in this editor and press "Run" button to execute it.
+
+'''
 import random
 
 wordList = ("mudar", "imergir", "estrangeiro", "pais")
@@ -6,37 +13,38 @@ chosenWord = random.choice(wordList)
 chances = 6
 booleankey = True
 
-print ("Jogo da forca. Adivinhe a palavra letra a letra. Você tem 6 chances!")
+print ("\033[34mJogo da forca. Adivinhe a palavra letra a letra. Você tem 6 chances!")
 
 while True:
   if booleankey == False:
       break
   else:
-    chosenLetter = input("Digite uma letra: ")
+    chosenLetter = input("\033[33mDigite uma letra: \033[32m".lower())
     if chosenLetter not in repeat:
         repeat.append(chosenLetter)
         if chosenLetter in chosenWord:
-            print("Voce achou uma letra!")
+            print("\033[32mVoce achou uma letra!")
             booleankey = False
             for i in chosenWord:
                 if i in repeat:
-                    print(i, end="")
+                    print(f'{i} ', end="")
                 else:
-                    print("_", end="")
+                    print("_ ", end="")
                     booleankey = True
             print()
         else:
-            print("Essa letra nao tem!")
+            print("\033[31mEssa letra nao tem!")
             chances -= 1
     else:
-        print("Essa letra ja foi digitada.")
+        print("\033[35mEssa letra ja foi digitada.")
     
     
     if chances<=0:
-        print("Suas chances acabaram! O homem morreu!")
+        print("\033[31mSuas chances acabaram! O homem morreu!")
         break
 
 if booleankey == False:
-    print(f"Parabéns! Voce salvou o homem! Resposta: {chosenWord}")
-print ("GAME OVER!")
+    print(f"\033[32mParabéns! Voce salvou o homem! Resposta: {chosenWord}")
+print ("\033[31mGAME OVER!")
+    
     
