@@ -1,5 +1,5 @@
-/*Variables in Java are the same as in python, C or JS. One detail that you need to pay attention to is that they are
-declared as in C language, and "string" has its first letter capitalized --> "String"*/
+/*Variable types in Java are the same as in python, C or JS. One detail that you need to pay attention to is that they are
+declared as in C language, and "string" has its first letter capitalized --> "String" and flot needs an 'f' after the number --> float weight = 61,8f*/
 
 public class Main{
 	public static void main(String[]args){
