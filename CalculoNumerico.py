@@ -143,6 +143,9 @@ class AplicacaoMatrizes:
         for i in range(n - 1, -1, -1):
             x[i] = (A[i, n] - np.dot(A[i, i+1:n], x[i+1:n])) / A[i, i]
 
+        # Arredondar os resultados para um número pequeno de casas decimais
+        x = np.round(x, decimals=10)
+
         return x
 
     def fatoracao_lu(self, matriz_key):
@@ -162,9 +165,6 @@ class AplicacaoMatrizes:
 
         # Vetor b (última coluna da matriz original)
         b = matriz[:, -1]
-
-        # Remove a última coluna da matriz U, pois ela é o vetor b
-        #U = U[:, :-1]
 
         # Resolve Ly = b usando substituição direta
         y = np.zeros(n)
