@@ -1,5 +1,5 @@
 #codigo a ser analisado
-code = "position=initial+rate*60"
+code = "position = initial + rate * 60"
 
 #variável que armazena cada lexema
 lexema = ""
@@ -7,13 +7,17 @@ lexema = ""
 #pequena gambiarra para não dar erro de vazamento no array
 code = code + " "
 
+#contador de identificadores
+contador = 1
+
 #loop para imprimir os tokens
 for i in range(0,len(code)):
     if code[i].isalpha() :
         lexema += code[i]
         
         if code[i+1].isspace() or code[i+1] in ("+", "-", "*", "/", "="):
-            print(f"<ID, {lexema}>")
+            print(f"<ID, Id{contador}>  #{lexema}")
+            contador += 1
             lexema = ""
     
     elif code[i] in ("+", "-", "*", "/", "="):
